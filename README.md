@@ -1,11 +1,11 @@
-###  DATE: 
-
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
-
-
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
+
+
+###  NAME: LOSHINI.G 
+###  ROLL NO :212223220051
+###  DEPARTMENT: IT
+###  DATE: 14/03/2024
+
 
 ### AIM
 To interface an Analog output (servo motor) and modify the angular displacement of the servo using PWM signal .
@@ -60,6 +60,13 @@ CIRCUIT DIAGRAM
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
+![Screenshot 2024-03-16 090341](https://github.com/Loshini2301/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/150007305/73d84ebf-2bf7-44a0-b646-59bda9143cb9)
+### SCHEMATIC DIAGRAM:
+![Screenshot 2024-03-16 091425](https://github.com/Loshini2301/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/150007305/31f4712b-41fc-41b5-9c0f-bd6e3b115b54)
+### GRAPH FOR SERIAL MONITOR VALUES:
+![Screenshot 2024-03-16 091844](https://github.com/Loshini2301/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/150007305/03d3a0ad-2b97-4c12-9b05-20653e1f5e56)
+
+
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,14 +81,34 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
+```
+#include <Servo.h>
+Servo meservo;
+int pos=0;
+void setup()
+{
+  meservo.attach(9);
+  Serial.begin(9600);
+}
+void loop()
+{
+  for(pos=0;pos<=180;pos+=1){
+    meservo.write(pos);
+    delay(20);
+    //Serial.print("angle=");
+    Serial.println(pos);
+    
+}
+  for(pos=180;pos>=0;pos-=1){
+    meservo.write(pos);
+    delay(20);
+    //Serial.print("angle=");
+    Serial.println(pos);
+    
+}
+  }
  
-
-
-
-
-
-
-
+```
 
 
 ### RESULTS: 
